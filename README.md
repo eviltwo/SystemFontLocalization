@@ -3,5 +3,5 @@
 
 # Install with UPM
 ```
-https://github.com/eviltwo/TerrainParts.git?path=src/TerrainParts/Assets/TerrainParts
+https://github.com/eviltwo/SystemFontLocalization.git?path=src/SystemFontLocalization/Assets/SystemFontLocalization
 ```
