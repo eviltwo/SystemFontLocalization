@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04878aec8e96a4b408fe6a09f5f1223a, type: 3}
+  m_Name: DefaultSystemFontNameList
+  m_EditorClassIdentifier: 
+  _settings:
+  - _languageCode: ja
+    _fontNames:
+    - Msgothic
+    - Msmincho
+    - Hiragino Kaku Gothic
+    - Hiragino
+  - _languageCode: zh
+    _fontNames:
+    - SimSun
+    - Hei

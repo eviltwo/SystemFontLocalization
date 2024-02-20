@@ -1,0 +1,8 @@
+System font list
+
+https://en.wikipedia.org/wiki/List_of_typefaces_included_with_Microsoft_Windows
+https://learn.microsoft.com/ja-jp/typography/fonts/windows_10_font_list
+https://learn.microsoft.com/en-us/typography/fonts/windows_11_font_list
+
+https://en.wikipedia.org/wiki/List_of_typefaces_included_with_macOS
+https://developer.apple.com/fonts/system-fonts/

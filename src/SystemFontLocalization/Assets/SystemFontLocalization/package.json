@@ -1,0 +1,23 @@
+{
+    "name": "com.eviltwo.system-font-localization",
+    "displayName": "System Font Localization",
+    "version": "0.5.0",             
+    "unity": "2022.3",
+    "description": "Auto generate fallback font asset by system font in runtime.",
+    "author": {
+        "name": "DAIKI(eviltwo)",
+        "url": "https://github.com/eviltwo"
+    },
+
+    "keywords": [
+        "localization",
+        "text-mesh-pro",
+        "tmp",
+        "font"
+    ],
+
+    "dependencies": {
+        "com.unity.textmeshpro": "3.2.0-pre.6",
+        "com.unity.localization": "^1.3.2"
+    }
+}
