@@ -18,6 +18,6 @@
 
     "dependencies": {
         "com.unity.textmeshpro": "3.2.0-pre.6",
-        "com.unity.localization": "^1.3.2"
+        "com.unity.localization": "1.3.2"
     }
 }
