@@ -12,3 +12,6 @@
 ```
 https://github.com/eviltwo/SystemFontLocalization.git?path=src/SystemFontLocalization/Assets/SystemFontLocalization
 ```
+
+# Note
+I've only tested it a little in my game so far. If you find any problems, please let me know.
