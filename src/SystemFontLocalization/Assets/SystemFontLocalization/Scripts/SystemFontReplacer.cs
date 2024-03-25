@@ -1,39 +1,73 @@
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 namespace FontLocalization
 {
-    public class SystemFontReplacer : MonoBehaviour
+    public static class SystemFontReplacer
     {
-        [SerializeField]
-        private TMP_FontAsset _baseFontAsset = null;
-
-        [SerializeField]
-        private SystemFontNameList _fontNameAsset = null;
-
-        private void OnEnable()
+        private class FontData
         {
-            ReplaceLanguage(LocalizationSettings.SelectedLocale.Identifier.Code);
-            LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+            public TMP_FontAsset BaseFontAsset;
+            public string LanguageCode;
         }
 
-        private void OnDisable()
+        private static SystemFontNameList _fontNameAsset;
+        private static List<FontData> _fonts = new List<FontData>();
+
+        public static void SetFontNameAsset(SystemFontNameList fontNameAsset)
         {
-            LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+            _fontNameAsset = fontNameAsset;
         }
 
-        private void OnLocaleChanged(Locale locale)
+        public static void AddFontAsset(TMP_FontAsset baseFontAsset)
         {
-            ReplaceLanguage(LocalizationSettings.SelectedLocale.Identifier.Code);
+            if (_fonts.Exists(v => v.BaseFontAsset == baseFontAsset))
+            {
+                return;
+            }
+
+            _fonts.Add(new FontData
+            {
+                BaseFontAsset = baseFontAsset,
+                LanguageCode = string.Empty
+            });
         }
 
-        public void ReplaceLanguage(string languageCode)
+        public static void UpdateFallbackFont()
         {
-            Debug.Log($"Try replace font language. {languageCode}");
+            UpdateFallbackFontInternal(LocalizationSettings.SelectedLocale.Identifier.Code);
+        }
+
+        public static void ChangeFontLanguage(string languageCode)
+        {
+            UpdateFallbackFontInternal(languageCode);
+        }
+
+        private static void UpdateFallbackFontInternal(string languageCode)
+        {
+            if (_fontNameAsset == null || string.IsNullOrEmpty(languageCode))
+            {
+                return;
+            }
+
+            var shouldReplace = false;
+            for (int i = 0; i < _fonts.Count; i++)
+            {
+                if (_fonts[i].LanguageCode != languageCode)
+                {
+                    shouldReplace = true;
+                    break;
+                }
+            }
+
+            if (!shouldReplace)
+            {
+                return;
+            }
+
             if (!_fontNameAsset.TryGetFontNames(languageCode, out var languageFontNames))
             {
                 Debug.Log($"Language font name is not found. {languageCode}");
@@ -53,8 +87,19 @@ namespace FontLocalization
                 return;
             }
 
-            _baseFontAsset.fallbackFontAssetTable.Clear();
-            _baseFontAsset.fallbackFontAssetTable.Add(fallbackFontAsset);
+            for (int i = 0; i < _fonts.Count; i++)
+            {
+                var fontData = _fonts[i];
+                if (fontData.LanguageCode == languageCode)
+                {
+                    continue;
+                }
+
+                fontData.LanguageCode = languageCode;
+                fontData.BaseFontAsset.fallbackFontAssetTable.Clear();
+                fontData.BaseFontAsset.fallbackFontAssetTable.Add(fallbackFontAsset);
+            }
+
             Debug.Log($"Fallback font replace completed. {languageCode}");
         }
 
@@ -65,7 +110,7 @@ namespace FontLocalization
             for (int i = 0; i < count; i++)
             {
                 var languageFontName = searchFontNames[i];
-                var systemFontPath = systemFontPaths.FirstOrDefault(v => v.Replace(" ", "").Contains(languageFontName.Replace(" ", ""), StringComparison.OrdinalIgnoreCase));
+                var systemFontPath = systemFontPaths.FirstOrDefault(v => v.Replace(" ", "").Contains(languageFontName.Replace(" ", ""), System.StringComparison.OrdinalIgnoreCase));
                 if (string.IsNullOrEmpty(systemFontPath))
                 {
                     Debug.Log($"Font not found. {languageFontName}");
