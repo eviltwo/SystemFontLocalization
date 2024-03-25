@@ -19,6 +19,3 @@ https://github.com/eviltwo/SystemFontLocalization.git?path=src/SystemFontLocaliz
 - Create empty GameObject and attach SystemFontReplacer component to it.
 - Set font asset and font name list in SystemFontReplacer component.
 - When you play the game, the font assets will be swapped to match the localization language.
-
-# Note
-I've only tested it a little in my game so far. If you find any problems, please let me know.
