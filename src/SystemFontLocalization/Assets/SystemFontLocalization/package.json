@@ -1,7 +1,7 @@
 {
     "name": "com.eviltwo.system-font-localization",
     "displayName": "System Font Localization",
-    "version": "0.6.0",             
+    "version": "0.7.0",             
     "unity": "2022.3",
     "description": "Auto generate fallback font asset by system font in runtime.",
     "author": {

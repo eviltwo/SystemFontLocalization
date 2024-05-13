@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.7.0] - 2024-05-13
+### Fixed
+- Support regex for language code and font name. Format of SystemFontNameList has been updated.
+
 ## [0.6.0] - 2024-03-25
 ### Fixed
 - Move internal process to static class.
