@@ -93,6 +93,14 @@ namespace FontLocalization
                 }
 
                 fontData.LanguageCode = languageCode;
+                for (int j = 0; j < fontData.BaseFontAsset.fallbackFontAssetTable.Count; j++)
+                {
+                    var oldFallback = fontData.BaseFontAsset.fallbackFontAssetTable[j];
+                    if (oldFallback != null)
+                    {
+                        Object.Destroy(oldFallback);
+                    }
+                }
                 fontData.BaseFontAsset.fallbackFontAssetTable.Clear();
                 fontData.BaseFontAsset.fallbackFontAssetTable.Add(fallbackFontAsset);
                 Debug.Log($"Fallback font is replaced. {languageCode}");
