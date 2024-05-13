@@ -1,5 +1,6 @@
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -16,6 +17,7 @@ namespace FontLocalization
 
         private static SystemFontNameList _fontNameAsset;
         private static List<FontData> _fonts = new List<FontData>();
+        private static List<string> _fontNameBuffer = new List<string>();
 
         public static void SetFontNameAsset(SystemFontNameList fontNameAsset)
         {
@@ -68,19 +70,14 @@ namespace FontLocalization
                 return;
             }
 
-            if (!_fontNameAsset.TryGetFontNames(languageCode, out var languageFontNames))
+            _fontNameAsset.GetFontNames(languageCode, _fontNameBuffer);
+            if (_fontNameBuffer.Count == 0)
             {
                 Debug.Log($"Language font name is not found. {languageCode}");
                 return;
             }
 
-            if (languageFontNames == null || languageFontNames.Length == 0)
-            {
-                Debug.LogError($"Language font name is empty. {languageCode}");
-                return;
-            }
-
-            var fallbackFontAsset = CreateFontAsset(languageFontNames);
+            var fallbackFontAsset = CreateFontAsset(_fontNameBuffer);
             if (fallbackFontAsset == null)
             {
                 Debug.LogError($"Failed to create fallbackfont. {languageCode}");
@@ -98,19 +95,18 @@ namespace FontLocalization
                 fontData.LanguageCode = languageCode;
                 fontData.BaseFontAsset.fallbackFontAssetTable.Clear();
                 fontData.BaseFontAsset.fallbackFontAssetTable.Add(fallbackFontAsset);
+                Debug.Log($"Fallback font is replaced. {languageCode}");
             }
-
-            Debug.Log($"Fallback font replace completed. {languageCode}");
         }
 
-        private static TMP_FontAsset CreateFontAsset(string[] searchFontNames)
+        private static TMP_FontAsset CreateFontAsset(IReadOnlyList<string> searchFontNames)
         {
             var systemFontPaths = Font.GetPathsToOSFonts();
-            var count = searchFontNames.Length;
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < searchFontNames.Count; i++)
             {
                 var languageFontName = searchFontNames[i];
-                var systemFontPath = systemFontPaths.FirstOrDefault(v => v.Replace(" ", "").Contains(languageFontName.Replace(" ", ""), System.StringComparison.OrdinalIgnoreCase));
+                //var systemFontPath = systemFontPaths.FirstOrDefault(v => v.Replace(" ", "").Contains(languageFontName.Replace(" ", ""), System.StringComparison.OrdinalIgnoreCase));
+                var systemFontPath = FindFont(systemFontPaths, languageFontName);
                 if (string.IsNullOrEmpty(systemFontPath))
                 {
                     Debug.Log($"Font not found. {languageFontName}");
@@ -133,11 +129,27 @@ namespace FontLocalization
                 }
 
                 fallbackFontAsset.atlasPopulationMode = AtlasPopulationMode.DynamicOS;
+                Debug.Log($"Fallback font is created. Source:{systemFontPath}");
                 return fallbackFontAsset;
             }
 
             Debug.LogError($"Failed to create fallbackfont.");
             return null;
+        }
+
+        private static string FindFont(string[] fontPaths, string pattern)
+        {
+            for (int i = 0; i < fontPaths.Length; i++)
+            {
+                var fontPath = fontPaths[i];
+                var fileName = Path.GetFileNameWithoutExtension(fontPath);
+                if (Regex.IsMatch(fileName, pattern))
+                {
+                    return fontPath;
+                }
+            }
+
+            return string.Empty;
         }
     }
 }
