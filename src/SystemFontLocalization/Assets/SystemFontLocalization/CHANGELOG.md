@@ -1,7 +1,11 @@
 # Changelog
 
-## [0.7.0] - 2024-05-13
+## [0.7.1] - 2024-05-13
 ### Fixed
+- Fixed an issue where old fonts remained.
+
+## [0.7.0] - 2024-05-13
+### Change
 - Support regex for language code and font name. Format of SystemFontNameList has been updated.
 
 ## [0.6.0] - 2024-03-25
