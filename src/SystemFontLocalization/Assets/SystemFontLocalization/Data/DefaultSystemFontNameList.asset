@@ -15,11 +15,16 @@ MonoBehaviour:
   _settings:
   - _languageCode: ja
     _fontNames:
-    - Msgothic
-    - Msmincho
-    - Hiragino Kaku Gothic
-    - Hiragino
+    - '[Mm][Ss].*'
+    - '[Mm][Ss]\s*[Gg]othic'
+    - '[Mm][Ss]\s*[Mm]incho'
+    - '[Hh]iragino\s*[Kk]aku\s*[Gg]othic'
+    - '[Hh]iragino.*'
   - _languageCode: zh
     _fontNames:
-    - SimSun
-    - Hei
+    - '[Ss]im\s*[Ss]un'
+    - '[Hh]ei'
+  - _languageCode: .*
+    _fontNames:
+    - '[Aa]rial'
+    - '[Aa]rial.*'

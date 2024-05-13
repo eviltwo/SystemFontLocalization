@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace FontLocalization
@@ -23,21 +25,17 @@ namespace FontLocalization
         [SerializeField]
         private LocalizationFontSetting[] _settings = null;
 
-        public bool TryGetFontNames(string languageCode, out string[] fontNames)
+        public void GetFontNames(string languageCode, List<string> results)
         {
-            var count = _settings.Length;
-            for (int i = 0; i < count; i++)
+            results.Clear();
+            for (int i = 0; i < _settings.Length; i++)
             {
                 var setting = _settings[i];
-                if (setting.LanguageCode == languageCode)
+                if (Regex.IsMatch(languageCode, setting.LanguageCode))
                 {
-                    fontNames = setting.FontNames;
-                    return true;
+                    results.AddRange(setting.FontNames);
                 }
             }
-
-            fontNames = new string[0];
-            return false;
         }
     }
 }
