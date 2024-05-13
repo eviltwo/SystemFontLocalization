@@ -19,7 +19,11 @@ https://github.com/eviltwo/SystemFontLocalization.git?path=src/SystemFontLocaliz
 - Create empty GameObject and attach SystemFontReplacer component to it.
 - Set font asset and font name list in SystemFontReplacer component.
 - When you play the game, the font assets will be swapped to match the localization language.
-- Recommend: Dynamic fonts cause diffs on git every time you build, so use static fonts instead.
+
+# Recommend settings
+- Use static fonts. Dynamic fonts cause diffs on git every time you build.
   - Set the default language to "en".
   - Set the base font asset to "Static".
   - Generate a Font atlas with the character set set to "ASCII".
+- Disable "kern" in text. Prevents the problem of Cyrillic characters being line breaks.
+- Setup default TextMeshPro settings in ProjectSettings.
