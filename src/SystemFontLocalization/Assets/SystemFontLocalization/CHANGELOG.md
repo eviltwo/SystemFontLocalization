@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.7.2] - 2024-07-15
+### Added
+- Added Korean font.
+
 ## [0.7.1] - 2024-05-13
 ### Fixed
 - Fixed an issue where old fonts remained.

@@ -24,6 +24,11 @@ MonoBehaviour:
     _fontNames:
     - '[Ss]im\s*[Ss]un'
     - '[Hh]ei'
+  - _languageCode: ko
+    _fontNames:
+    - '[Mm]algun'
+    - '[Bb]atang'
+    - '[Aa]pple\s*[Gg]othic'
   - _languageCode: .*
     _fontNames:
     - '[Aa]rial'
