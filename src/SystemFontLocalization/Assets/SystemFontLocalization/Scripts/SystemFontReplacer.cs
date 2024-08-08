@@ -113,7 +113,6 @@ namespace FontLocalization
             for (int i = 0; i < searchFontNames.Count; i++)
             {
                 var languageFontName = searchFontNames[i];
-                //var systemFontPath = systemFontPaths.FirstOrDefault(v => v.Replace(" ", "").Contains(languageFontName.Replace(" ", ""), System.StringComparison.OrdinalIgnoreCase));
                 var systemFontPath = FindFont(systemFontPaths, languageFontName);
                 if (string.IsNullOrEmpty(systemFontPath))
                 {

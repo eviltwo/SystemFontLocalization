@@ -15,7 +15,8 @@ MonoBehaviour:
   _settings:
   - _languageCode: ja
     _fontNames:
-    - '[Mm][Ss].*'
+    - '[Yy]u\s*[Gg]oth[Mm]'
+    - '[Yy]u\s*[Gg]oth*'
     - '[Mm][Ss]\s*[Gg]othic'
     - '[Mm][Ss]\s*[Mm]incho'
     - '[Hh]iragino\s*[Kk]aku\s*[Gg]othic'

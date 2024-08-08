@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.7.3] - Develop
+### Added
+- Added Japanese font (Yu Gothic)
+
 ## [0.7.2] - 2024-07-15
 ### Added
 - Added Korean font.
