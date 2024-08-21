@@ -93,6 +93,17 @@ namespace FontLocalization
                 }
 
                 fontData.LanguageCode = languageCode;
+
+                for (int j = 0; j < fontData.BaseFontAsset.fallbackFontAssetTable.Count; j++)
+                {
+                    var oldFallback = fontData.BaseFontAsset.fallbackFontAssetTable[j];
+                    if (oldFallback != null && oldFallback.material != null && oldFallback.material.name == fallbackFontAsset.material.name)
+                    {
+                        Debug.Log($"Skip to replace fallback font. Because same font is already set. {languageCode} : {oldFallback.material.name}");
+                        return;
+                    }
+                }
+
                 for (int j = 0; j < fontData.BaseFontAsset.fallbackFontAssetTable.Count; j++)
                 {
                     var oldFallback = fontData.BaseFontAsset.fallbackFontAssetTable[j];
@@ -101,6 +112,7 @@ namespace FontLocalization
                         Object.Destroy(oldFallback);
                     }
                 }
+
                 fontData.BaseFontAsset.fallbackFontAssetTable.Clear();
                 fontData.BaseFontAsset.fallbackFontAssetTable.Add(fallbackFontAsset);
                 Debug.Log($"Fallback font is replaced. {languageCode}");

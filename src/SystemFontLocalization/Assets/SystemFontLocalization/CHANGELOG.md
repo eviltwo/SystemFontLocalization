@@ -3,6 +3,8 @@
 ## [0.7.3] - Develop
 ### Added
 - Added Japanese font (Yu Gothic)
+### Fixed
+- Fixed a bug where characters would disappear when switching to a different language while displaying the same string in the same font.
 
 ## [0.7.2] - 2024-07-15
 ### Added
