@@ -9,19 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: SampleText_zh
+  m_Script: {fileID: 11500000, guid: 1bb1838fe8befb0429646b938e757ff3, type: 3}
+  m_Name: Chinese (Traditional) (zh-Hant)
   m_EditorClassIdentifier: 
-  m_LocaleId:
-    m_Code: zh
-  m_SharedData: {fileID: 11400000, guid: 579d6004da40e884c801e04224bed993, type: 2}
+  m_Identifier:
+    m_Code: zh-Hant
   m_Metadata:
     m_Items: []
-  m_TableData:
-  - m_Id: 208537948160
-    m_Localized: "\u4F60\u597D \u97F3\u4E50"
-    m_Metadata:
-      m_Items: []
+  m_LocaleName: Chinese (Traditional) (zh-Hant)
+  m_CustomFormatCultureCode: 
+  m_UseCustomFormatter: 0
+  m_SortOrder: 10000
   references:
     version: 2
     RefIds: []

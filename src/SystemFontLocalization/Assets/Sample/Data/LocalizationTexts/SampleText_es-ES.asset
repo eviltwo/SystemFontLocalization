@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 208537948160
-    m_Localized: "Hola M\xFAsica"
+    m_Localized: Hola
     m_Metadata:
       m_Items: []
   references:
