@@ -5,6 +5,7 @@
 - Added Japanese font (Yu Gothic)
 ### Fixed
 - Fixed a bug where characters would disappear when switching to a different language while displaying the same string in the same font.
+- Fixed an issue where font replacement was skipped in the built game.
 
 ## [0.7.2] - 2024-07-15
 ### Added
