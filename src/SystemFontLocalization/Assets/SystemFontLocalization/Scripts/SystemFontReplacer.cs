@@ -97,9 +97,11 @@ namespace FontLocalization
                 for (int j = 0; j < fontData.BaseFontAsset.fallbackFontAssetTable.Count; j++)
                 {
                     var oldFallback = fontData.BaseFontAsset.fallbackFontAssetTable[j];
-                    if (oldFallback != null && oldFallback.material != null && oldFallback.material.name == fallbackFontAsset.material.name)
+                    if (oldFallback != null
+                        && oldFallback.faceInfo.familyName == fallbackFontAsset.faceInfo.familyName
+                        && oldFallback.faceInfo.styleName == fallbackFontAsset.faceInfo.styleName)
                     {
-                        Debug.Log($"Skip to replace fallback font. Because same font is already set. {languageCode} : {oldFallback.material.name}");
+                        Debug.Log($"Skip to replace fallback font. Because same font is already set. {languageCode} : {oldFallback.faceInfo.familyName} {oldFallback.faceInfo.styleName}");
                         return;
                     }
                 }
