@@ -13,6 +13,9 @@ namespace FontLocalization
         [SerializeField]
         private SystemFontNameList _fontNameAsset = null;
 
+        [SerializeField]
+        private bool _rebuildCanvases = true;
+
         private void OnEnable()
         {
             SystemFontReplacer.SetFontNameAsset(_fontNameAsset);
@@ -29,6 +32,21 @@ namespace FontLocalization
         private void OnLocaleChanged(Locale locale)
         {
             SystemFontReplacer.ChangeFontLanguage(locale.Identifier.Code);
+            if (_rebuildCanvases)
+            {
+                UpdateCanvases();
+            }
+        }
+
+        private void UpdateCanvases()
+        {
+            var canvases = FindObjectsOfType<Canvas>();
+            for (int i = 0; i < canvases.Length; i++)
+            {
+                var canvas = canvases[i];
+                canvas.enabled = false;
+                canvas.enabled = true;
+            }
         }
     }
 }

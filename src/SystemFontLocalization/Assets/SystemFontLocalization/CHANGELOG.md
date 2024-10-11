@@ -6,6 +6,7 @@
 ### Fixed
 - Fixed a bug where characters would disappear when switching to a different language while displaying the same string in the same font.
 - Fixed an issue where font replacement was skipped in the built game.
+- Fixed the issue where the text was not updating when the same text exists in multiple languages. Force refresh the canvas.
 
 ## [0.7.2] - 2024-07-15
 ### Added
