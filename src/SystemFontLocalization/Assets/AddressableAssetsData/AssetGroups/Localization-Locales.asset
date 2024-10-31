@@ -13,18 +13,16 @@ MonoBehaviour:
   m_Name: Localization-Locales
   m_EditorClassIdentifier: 
   m_GroupName: Localization-Locales
-  m_Data:
-    m_SerializedData: []
   m_GUID: e5e74f95bab8da741af088f64ff65eac
   m_SerializeEntries:
-  - m_GUID: 78c5048d1187a8a45b3da9c34450d182
-    m_Address: Japanese (ja)
+  - m_GUID: 0cdb4d69962f87843b9cefdc79bd6642
+    m_Address: Spanish (Spain) (es-ES)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ea25f2b166df81e49a31946d66142d9d
-    m_Address: English (en)
+  - m_GUID: 181290216829597408c7cd89ab614166
+    m_Address: Chinese (Traditional) (zh-Hant)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
@@ -35,8 +33,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f6b900dc463a66b4d9ab01dc0c8ae665
-    m_Address: German (de)
+  - m_GUID: 3f4f586a258f9cf499af8e312f25c0b9
+    m_Address: Chinese (Simplified) (zh-Hans)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
@@ -47,32 +45,32 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e66804781ace8cd4bab10beb4ba6622e
-    m_Address: Russian (ru)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0cdb4d69962f87843b9cefdc79bd6642
-    m_Address: Spanish (Spain) (es-ES)
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 508716dcd0aa7a643a2f1135887fc694
     m_Address: Korean (ko)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3f4f586a258f9cf499af8e312f25c0b9
-    m_Address: Chinese (Simplified) (zh-Hans)
+  - m_GUID: 78c5048d1187a8a45b3da9c34450d182
+    m_Address: Japanese (ja)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 181290216829597408c7cd89ab614166
-    m_Address: Chinese (Traditional) (zh-Hant)
+  - m_GUID: e66804781ace8cd4bab10beb4ba6622e
+    m_Address: Russian (ru)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea25f2b166df81e49a31946d66142d9d
+    m_Address: English (en)
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6b900dc463a66b4d9ab01dc0c8ae665
+    m_Address: German (de)
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
