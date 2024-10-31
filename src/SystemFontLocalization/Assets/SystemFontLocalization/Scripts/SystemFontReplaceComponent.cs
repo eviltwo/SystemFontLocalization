@@ -40,7 +40,7 @@ namespace FontLocalization
 
         private void UpdateCanvases()
         {
-            var canvases = FindObjectsOfType<Canvas>();
+            var canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
             for (int i = 0; i < canvases.Length; i++)
             {
                 var canvas = canvases[i];
