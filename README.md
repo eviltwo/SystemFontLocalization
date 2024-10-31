@@ -3,10 +3,13 @@
  
  ![SystemFont](https://github.com/eviltwo/SystemFontLocalization/assets/7721151/8e203dbf-ea21-445d-a4d9-b8484028bf6d)
 
+ Verified working on: Unity 2022.3.39, Unity 6
+
 # Dependency
 When you import SystemFontLocalization with UPM, these packages are automatically imported.
 - Text Mesh Pro `com.unity.textmeshpro 3.2.0-pre.6`
   - Required 3.2.0-pre.6 for function `TMP_FontAsset.CreateFontAsset(fontPath)`
+  - Since Unity 6 includes an appropriate version of TMP, manual import is not necessary.
 - Localization `com.unity.localization`
 
 # Install with UPM
