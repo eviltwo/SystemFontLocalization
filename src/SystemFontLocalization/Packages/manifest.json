@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.collab-proxy": "2.4.3",
+    "com.unity.collab-proxy": "2.5.2",
     "com.unity.feature.development": "1.0.1",
     "com.unity.localization": "1.5.2",
     "com.unity.textmeshpro": "3.2.0-pre.6",
