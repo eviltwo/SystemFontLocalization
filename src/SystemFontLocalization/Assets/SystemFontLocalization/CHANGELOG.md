@@ -1,6 +1,11 @@
 # Changelog
 
-## [0.7.3] - Develop
+## [0.7.4] - Develop
+### Fixed
+- Added start and end characters to the regex in DefaultSystemFontNameList.asset.  
+  - This fixes the issue where unintended Chinese fonts were being selected.
+
+## [0.7.3] - 2024-10-31
 ### Added
 - Added Japanese font (Yu Gothic)
 ### Fixed
